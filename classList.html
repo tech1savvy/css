@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class List Example</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myElement">Hello, World!</div>
+    <button id="addClassButton">Add Class</button>
+    <button id="removeClassButton">Remove Class</button>
+    <button id="toggleClassButton">Toggle Class</button>
+    <button id="checkClassButton">Check Class</button>
+
+    <script>
+        const myElement = document.getElementById('myElement');
+        const addClassButton = document.getElementById('addClassButton');
+        const removeClassButton = document.getElementById('removeClassButton');
+        const toggleClassButton = document.getElementById('toggleClassButton');
+        const checkClassButton = document.getElementById('checkClassButton');
+
+        addClassButton.addEventListener('click', () => {
+            myElement.classList.add('highlight');
+        });
+
+        removeClassButton.addEventListener('click', () => {
+            myElement.classList.remove('highlight');
+        });
+
+        toggleClassButton.addEventListener('click', () => {
+            myElement.classList.toggle('highlight');
+        });
+
+        checkClassButton.addEventListener('click', () => {
+            const hasClass = myElement.classList.contains('highlight');
+            alert(`Element has 'highlight' class: ${hasClass}`);
+        });
+    </script>
+</body>
+
+</html>
