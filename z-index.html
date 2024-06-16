@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change z-index Example</title>
+    <style>
+        #element1,
+        #element2 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+
+        #element1 {
+            background-color: red;
+            top: 80px;
+            left: 80px;
+        }
+
+        #element2 {
+            background-color: blue;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="element1"></div>
+        <div id="element2"></div>
+        <button onclick="changeZindex('element1',1)">Increment z-index of Element 1</button>
+        <button onclick="changeZindex('element1',-1)">Decrement z-index of Element 1</button>
+        <button onclick="changeZindex('element2',1)">Increment z-index of Element 2</button>
+        <button onclick="changeZindex('element2',-1)">Decrement z-index of Element 2</button>
+        <p id="zIndexOfElement1"></p>
+        <p id="zIndexOfElement2"></p>
+
+        <p></p>
+    </main>
+    <script>
+        function changeZindex(elementId, zIndex) {
+            const element = document.getElementById(elementId);
+            const currentZIndex = Number(element.style.zIndex);
+            element.style.zIndex = currentZIndex + zIndex;
+            element.innerText = `z-index: ${element.style.zIndex}`;
+        }
+    </script>
+</body>
+
+</html>
